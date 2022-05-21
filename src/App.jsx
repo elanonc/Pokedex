@@ -1,14 +1,18 @@
 import './App.css'
-import {Pokemon} from './Components/Pokemon'
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Inicio from './Pages/Inicio';
 
 function App() {
 
   return (
-    
-
-    <Pokemon/>
-
-
+    <Router>
+      <Container>
+        <Routes>
+        <Route path="/" element={<Inicio />}></Route>
+        </Routes>
+      </Container>
+    </Router>
   )
 }
 

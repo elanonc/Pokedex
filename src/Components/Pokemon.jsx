@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function Pokemon() {
+export function Pokemon({pokemon}) {
     return (
-        <>
-            <h1>AAA</h1>
-        </>
+        <div>
+            {pokemon.name}
+        </div>
     )
 }

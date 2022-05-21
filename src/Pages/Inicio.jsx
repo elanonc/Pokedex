@@ -2,31 +2,34 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
 
-import Pokemon from "../Components/Pokemon";
+import { Pokemon } from '../Components/Pokemon';
 
-const [pokemon, setPokemon] = useState([]);
-const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-    getPokemonList();
-}, []);
-
-async function getPokemonList() {
-    let pokemonArray = [];
-    for (let i = 1; i <= 151; i++) {
-        pokemonArray.push(await getPokemonData(i));
-    }
-    console.log(pokemonArray);
-    setPokemon(pokemonArray);
-    setLoading(false);
-}
-
-async function getPokemonData(id) {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    return response;
-}
 
 function Inicio() {
+
+    const [pokemon, setPokemon] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getPokemonList();
+    }, []);
+
+    async function getPokemonList() {
+        let pokemonArray = [];
+        for (let i = 1; i <= 151; i++) {
+            pokemonArray.push(await getPokemonData(i));
+        }
+        console.log(pokemonArray);
+        setPokemon(pokemonArray);
+        setLoading(false);
+    }
+
+    async function getPokemonData(id) {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        return response;
+    }
+
   return (
     <>
         {
