@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap';
 
 import { Pokemon } from '../Components/Pokemon';
-
+import { Loader } from '../Components/Loader';
 
 
 function Inicio() {
@@ -34,7 +34,7 @@ function Inicio() {
     <>
         {
             loading ? (
-                <h1>Carregando...</h1>
+                <Loader/>
             ) : (
                 <Row>
                     {
